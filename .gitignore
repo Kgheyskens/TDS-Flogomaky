@@ -1,0 +1,54 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+build/
+.cache/
+.next/
+out/
+public/build/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Runtime / env
+.env
+.env.*.local
+.env.local
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.swp
+
+# Coverage / reports
+coverage/
+coverage-final.json
+.nyc_output/
+
+# Packaging
+*.tgz
+*.zip
+
+# Misc caches
+.cache/
+.tmp/
