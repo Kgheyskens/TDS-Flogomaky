@@ -12,7 +12,7 @@ MeeMetMij
 3. Install dependencies (example for Node)
    npm install
 4. Run locally (example)
-   npm start
+   npm start testing
 
 ## What to do next
 
