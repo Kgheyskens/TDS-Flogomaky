@@ -5,28 +5,6 @@ Wij zijn een jong team gedreven door een simpele missie: elke schooldag veiliger
 
 ---
 
-This repository now includes a small multi-page prototype website (Dutch) under the `pages/` folder. It contains a professional-looking layout, simple JS interactions (preloader, form handling, lazy image loading) and self-made SVG placeholders.
-
-Quick preview (Windows, cmd.exe)
-
-- Using Node (http-server, via npx):
-
-```bat
-npx http-server pages -o
-```
-
-- Using Python 3 (if installed):
-
-```bat
-python -m http.server 8000 --directory pages
-```
-
-Then open: http://localhost:8000
-
-If the automatic browser open flag doesn't work, open the URL manually.
-
----
-
 Site structure (new/updated files)
 
 pages/
@@ -39,16 +17,16 @@ pages/
 - assets/*.svg         — Self-made SVG placeholder images (logo, hero, team members)
 
 Root
-- LICENSE              — MIT license (created earlier)
+- LICENSE              — MIT license
 - README.md            — (this file)
 
 ---
 
 Notes & next steps
 
-- Forms are currently client-side placeholders (no backend). I can wire the sign-up form to Mailchimp/Netlify Forms/Google Forms or create a simple serverless endpoint.
-- I can extract the header/footer into a shared template if you plan to scale to more pages or use a static site generator (11ty, Hugo, etc.).
-- I can add real images, a favicon, or analytics/tracking if you want.
+-update info /images
+-link to mvp
+-link to form , etc...
 
 ---
 
@@ -85,6 +63,9 @@ MeeMetMij startte als een experiment: een eenvoudige landingspagina, interviews 
 
 ## Resultaten & Validatie
 
+zie ook:
+https://docs.google.com/forms/d/1rBw8QCFt_ik1pochLW_xK88KWOgUiJYIDAeEPSsYXto/edit
+
 - Ouders niet bereid apart te betalen
 - Succesvolle testdagen met positieve feedback uit de buurt en vrienden/familie
 - Scholen vragen directe rapportage & eenvoudige communicatie
@@ -101,7 +82,8 @@ MeeMetMij startte als een experiment: een eenvoudige landingspagina, interviews 
 - Vragenlijst ouders/scholen
 
 ---
-
+website is te vinden op 
+https://meemetmij.netlify.app/
 ## Hoe kun je meedoen?
 
 We zoeken altijd feedback en mensen die hun mening willen delen!  
