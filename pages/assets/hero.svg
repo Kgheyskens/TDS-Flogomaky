@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#2b7cff"/>
+      <stop offset="1" stop-color="#1e60d6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#g)" rx="20"/>
+  <g fill="rgba(255,255,255,0.9)" font-family="sans-serif">
+    <text x="40" y="120" font-size="42" font-weight="700">MeeMetMij</text>
+    <text x="40" y="170" font-size="20" opacity="0.95">Veilig, sociaal en zorgeloos op weg naar school</text>
+  </g>
+</svg>
+

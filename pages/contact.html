@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — MeeMetMij</title>
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+  <div id="preloader"><div class="spinner" role="status"></div></div>
+  <header class="header">
+    <div class="container">
+      <div class="brand">
+        <img src="assets/logo.svg" data-src="assets/logo.svg" alt="MeeMetMij logo" />
+        <div>
+          <strong>MeeMetMij</strong>
+          <div class="small">Contact & inschrijven</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="wie.html">Wie zijn we</a>
+        <a href="experimenten.html">Experimenten</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top:1rem">
+    <section class="card">
+      <h1>Neem contact op of schrijf je in</h1>
+      <p>Ben je benieuwd naar MeeMetMij? Schrijf je in voor updates of pre-sales, of stuur ons een vraag.</p>
+
+      <h2 id="inschrijven" style="margin-top:1rem">Inschrijven voor updates</h2>
+      <form id="signup" action="#">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" placeholder="je@mail.com" required>
+        <label for="naam" style="margin-top:.5rem;display:block">Naam (optioneel)</label>
+        <input id="naam" type="text" placeholder="Voornaam Achternaam">
+        <button class="cta" style="margin-top:.5rem" id="inschrijvenBtn">Schrijf je in</button>
+      </form>
+
+      <h2 style="margin-top:1rem">Direct contact</h2>
+      <p>Email: <a class="link" href="mailto:info@meemetmij.nl">info@meemetmij.nl</a></p>
+      <p>Socials: <a class="link" href="#">Instagram</a> · <a class="link" href="#">Facebook</a></p>
+
+    </section>
+
+    <section class="card" style="margin-top:1rem">
+      <h2>Feedback</h2>
+      <p>Heb je opmerkingen of wil je meedoen aan pilots? Laat een bericht achter via bovenstaand formulier of stuur een e-mail.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">&copy; 2025 MeeMetMij — Team Flogomaky</div>
+  </footer>
+
+  <script src="src/app.js"></script>
+</body>
+</html>
