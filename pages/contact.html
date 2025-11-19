@@ -5,55 +5,60 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Contact — MeeMetMij</title>
   <link rel="stylesheet" href="src/styles.css">
+  <script src="src/lib/lottie.min.js"></script>
 </head>
 <body>
-  <div id="preloader"><div class="spinner" role="status"></div></div>
+  <div id="preloader">
+    <div id="lottie-preloader" style="width: 200px; height: 200px;"></div>
+  </div>
+
   <header class="header">
     <div class="container">
       <div class="brand">
-        <img src="assets/logo.svg" data-src="assets/logo.svg" alt="MeeMetMij logo" />
-        <div>
-          <strong>MeeMetMij</strong>
-          <div class="small">Contact & inschrijven</div>
-        </div>
+        <img src="assets/logo.svg" alt="MeeMetMij logo" />
+        <strong>MeeMetMij</strong>
       </div>
       <nav class="nav">
         <a href="../index.html">Home</a>
         <a href="wie.html">Wie zijn we</a>
         <a href="experimenten.html">Experimenten</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="active">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="container" style="margin-top:1rem">
-    <section class="card">
-      <h1>Neem contact op of schrijf je in</h1>
-      <p>Ben je benieuwd naar MeeMetMij? Schrijf je in voor updates of pre-sales, of stuur ons een vraag.</p>
-
-      <h2 id="inschrijven" style="margin-top:1rem">Inschrijven voor updates</h2>
-      <form id="signup" action="#">
-        <label for="email">E-mail</label>
-        <input id="email" type="email" placeholder="je@mail.com" required>
-        <label for="naam" style="margin-top:.5rem;display:block">Naam (optioneel)</label>
-        <input id="naam" type="text" placeholder="Voornaam Achternaam">
-        <button class="cta" style="margin-top:.5rem" id="inschrijvenBtn">Schrijf je in</button>
-      </form>
-
-      <h2 style="margin-top:1rem">Direct contact</h2>
-      <p>Email: <a class="link" href="mailto:info@meemetmij.nl">info@meemetmij.nl</a></p>
-      <p>Socials: <a class="link" href="#">Instagram</a> · <a class="link" href="#">Facebook</a></p>
-
+  <main class="container">
+    <section class="hero">
+      <h1>Contacteer Ons</h1>
+      <p>Heb je een vraag, wil je je inschrijven voor updates, of ben je geïnteresseerd in een samenwerking? We horen graag van je.</p>
     </section>
 
-    <section class="card" style="margin-top:1rem">
-      <h2>Feedback</h2>
-      <p>Heb je opmerkingen of wil je meedoen aan pilots? Laat een bericht achter via bovenstaand formulier of stuur een e-mail.</p>
+    <section class="card">
+      <h2 id="inschrijven">Inschrijven voor Updates</h2>
+      <form id="signup" action="#">
+        <div class="form-group">
+          <label for="email">E-mailadres</label>
+          <input id="email" type="email" placeholder="jouw@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="naam">Naam (optioneel)</label>
+          <input id="naam" type="text" placeholder="Je naam">
+        </div>
+        <button class="cta" type="submit">Schrijf je in</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Direct Contact</h2>
+      <p>Voor algemene vragen of persinformatie, stuur een e-mail naar <a class="link" href="mailto:info@meemetmij.nl">info@meemetmij.nl</a>.</p>
+      <p>Volg ons op <a class="link" href="#">Instagram</a> en <a class="link" href="#">Facebook</a> voor de laatste updates.</p>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container">&copy; 2025 MeeMetMij — Team Flogomaky</div>
+    <div class="container">
+      <p>&copy; 2025 MeeMetMij — Team Flogomaky</p>
+    </div>
   </footer>
 
   <script src="src/app.js"></script>

@@ -1,65 +1,60 @@
-// pages/src/app.js - site interactions and preloader
-(function(){
-  'use strict';
+document.addEventListener('DOMContentLoaded', () => {
+  const preloader = document.getElementById('preloader');
+  const lottieContainer = document.getElementById('lottie-preloader');
 
-  // Preloader: hide after content is ready
-  function hidePreloader(){
-    const p = document.getElementById('preloader');
-    if(!p) return;
-    p.style.opacity = '0';
-    setTimeout(()=>{ p.style.display='none'; }, 450);
+  if (preloader && lottieContainer) {
+    const isIndex = window.location.pathname.endsWith('index.html') || window.location.pathname === '/';
+    const path = isIndex ? 'pages/assets/preloader.json' : 'assets/preloader.json';
+
+    try {
+      const animation = lottie.loadAnimation({
+        container: lottieContainer,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: path
+      });
+
+      animation.addEventListener('DOMLoaded', () => {
+        console.log('Lottie animation loaded successfully.');
+      });
+
+      animation.addEventListener('data_failed', () => {
+        console.error('Lottie animation data failed to load. Hiding preloader.');
+        preloader.style.display = 'none';
+      });
+
+    } catch (error) {
+      console.error('Error loading Lottie animation:', error);
+      preloader.style.display = 'none';
+    }
   }
 
-  document.addEventListener('DOMContentLoaded', function(){
-    // simulate a small load time for demo
-    setTimeout(hidePreloader, 600);
-
-    // signup form handling
-    const form = document.getElementById('signup');
-    if(form){
-      form.addEventListener('submit', function(ev){
-        ev.preventDefault();
-        const email = form.querySelector('input[type=email]')?.value || '';
-        // basic validation
-        if(!email || !email.includes('@')){
-          alert('Vul een geldig e-mailadres in.');
-          return;
-        }
-        // simple visual feedback
-        const btn = form.querySelector('button');
-        const old = btn.innerText;
-        btn.disabled = true;
-        btn.innerText = 'Ingeschreven ✓';
-        setTimeout(()=>{ btn.disabled=false; btn.innerText = old; form.reset(); }, 1600);
-        console.log('Inschrijving:', email);
-      });
-    }
-
-    // Smooth anchor scrolling for modern browsers
-    document.querySelectorAll('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click', function(e){
-        const href = this.getAttribute('href');
-        if(href.length>1){
-          const el = document.querySelector(href);
-          if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}); }
-        }
-      });
-    });
-
-    // lazy load images with data-src
-    const imgs = document.querySelectorAll('img[data-src]');
-    if('IntersectionObserver' in window){
-      const io = new IntersectionObserver((entries, obs)=>{
-        entries.forEach(entry=>{
-          if(entry.isIntersecting){
-            const img = entry.target; img.src = img.dataset.src; img.removeAttribute('data-src'); obs.unobserve(img);
-          }
-        });
-      },{rootMargin:'50px'});
-      imgs.forEach(i=>io.observe(i));
-    } else {
-      imgs.forEach(i=>{ i.src = i.dataset.src; i.removeAttribute('data-src'); });
+  window.addEventListener('load', () => {
+    if (preloader) {
+      preloader.style.display = 'none';
     }
   });
 
-})();
+  // Scroll-triggered animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  const hiddenElements = document.querySelectorAll('.card, .hero');
+  hiddenElements.forEach(el => observer.observe(el));
+
+  // Header scroll effect
+  const header = document.querySelector('.header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+});

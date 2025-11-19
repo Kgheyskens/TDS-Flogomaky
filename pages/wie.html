@@ -5,76 +5,73 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Wie zijn we — MeeMetMij</title>
   <link rel="stylesheet" href="src/styles.css">
+  <script src="src/lib/lottie.min.js"></script>
 </head>
 <body>
-  <div id="preloader"><div class="spinner" role="status"></div></div>
+  <div id="preloader">
+    <div id="lottie-preloader" style="width: 200px; height: 200px;"></div>
+  </div>
+
   <header class="header">
     <div class="container">
       <div class="brand">
-        <img src="assets/logo.svg" data-src="assets/logo.svg" alt="MeeMetMij logo" />
-        <div>
-          <strong>MeeMetMij</strong>
-          <div class="small">Team Flogomaky</div>
-        </div>
+        <img src="assets/logo.svg" alt="MeeMetMij logo" />
+        <strong>MeeMetMij</strong>
       </div>
       <nav class="nav">
         <a href="../index.html">Home</a>
-        <a href="wie.html">Wie zijn we</a>
-        <a href="./experimenten.html">Experimenten</a>
-        <a href="./contact.html">Contact</a>
+        <a href="wie.html" class="active">Wie zijn we</a>
+        <a href="experimenten.html">Experimenten</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="container" style="margin-top:1rem">
-    <section class="card">
-      <h1>Ons team</h1>
-      <p>Wij zijn Team Flogomaky: een multidisciplinary team dat zich inzet voor veilige schoolroutes. We combineren technologie, design en community-ervaring.</p>
-
-      <div class="team-grid" style="margin-top:1rem">
-        <div class="team-card card">
-          <img src="assets/team1.svg" data-src="assets/team1.svg" alt="Mathias" />
-          <div>
-            <strong>Mathias Broeckx</strong>
-            <div class="small">Strategy & operations. Verantwoordelijk voor partnerschappen met scholen.</div>
-          </div>
-        </div>
-
-        <div class="team-card card">
-          <img src="assets/team2.svg" data-src="assets/team2.svg" alt="Flor" />
-          <div>
-            <strong>Flor Bosch</strong>
-            <div class="small">Design & UX. Focus op eenvoudige, veilige flows voor ouders en begeleiders.</div>
-          </div>
-        </div>
-
-        <div class="team-card card">
-          <img src="assets/team1.svg" data-src="assets/team1.svg" alt="Kayn" />
-          <div>
-            <strong>Kayn Gheyskens</strong>
-            <div class="small">Tech lead. API's, realtime updates en integraties.</div>
-          </div>
-        </div>
-
-        <div class="team-card card">
-          <img src="assets/team2.svg" data-src="assets/team2.svg" alt="Govart" />
-          <div>
-            <strong>Govart Peijnenborg</strong>
-            <div class="small">Community & scholen. Pilotprogramma's en feedbackloops.</div>
-          </div>
-        </div>
-      </div>
-
+  <main class="container">
+    <section class="hero">
+      <h1>Ons Team</h1>
+      <p>Wij zijn Team Flogomaky: een gepassioneerd en multidisciplinair team dat zich inzet voor veiligere en socialere schoolroutes. We combineren expertise in technologie, design en community building.</p>
     </section>
 
-    <section class="card" style="margin-top:1rem">
-      <h2>Onze achtergrond & waarden</h2>
-      <p>We geloven in duurzame mobiliteit, inclusieve samenwerking en het creëren van rust aan de schoolpoort. Veiligheid, eenvoud en sociale verbinding staan centraal.</p>
+    <section class="card">
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="assets/team1.svg" alt="Mathias" />
+          <strong>Mathias Broeckx</strong>
+          <div class="small">Strategy & Operations</div>
+          <p>Verantwoordelijk voor de algemene strategie en partnerschappen met scholen en steden.</p>
+        </div>
+        <div class="team-card">
+          <img src="assets/team2.svg" alt="Flor" />
+          <strong>Flor Bosch</strong>
+          <div class="small">Design & UX</div>
+          <p>Focust op het creëren van een eenvoudige en veilige gebruikerservaring voor ouders en begeleiders.</p>
+        </div>
+        <div class="team-card">
+          <img src="assets/team1.svg" alt="Kayn" />
+          <strong>Kayn Gheyskens</strong>
+          <div class="small">Tech Lead</div>
+          <p>Leidt de technische ontwikkeling, van de app en API's tot realtime updates en integraties.</p>
+        </div>
+        <div class="team-card">
+          <img src="assets/team2.svg" alt="Govart" />
+          <strong>Govart Peijnenborg</strong>
+          <div class="small">Community & Scholen</div>
+          <p>Zet pilotprogramma's op en verzamelt feedback van onze gebruikers om het platform te verbeteren.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Onze Waarden</h2>
+      <p>We geloven in duurzame mobiliteit, inclusieve samenwerking en het creëren van een veilige en vertrouwde omgeving. Onze kernwaarden zijn veiligheid, eenvoud en sociale verbinding.</p>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container">&copy; 2025 MeeMetMij — Team Flogomaky</div>
+    <div class="container">
+      <p>&copy; 2025 MeeMetMij — Team Flogomaky</p>
+    </div>
   </footer>
 
   <script src="src/app.js"></script>
