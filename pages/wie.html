@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Wie zijn we — MeeMetMij</title>
-  <link rel="stylesheet" href="src/styles.css">
-  <script src="src/lib/lottie.min.js"></script>
+  <title>Wie Zijn We — MeeMetMij</title>
+  <link rel="icon" type="image/svg+xml" href="/TDS-Flogomaky/pages/assets/meemetmij.svg" sizes="any">
+  <link rel="stylesheet" href="/TDS-Flogomaky/pages/src/styles.css">
+  <script src="/TDS-Flogomaky/pages/src/lib/lottie.min.js"></script>
 </head>
 <body>
   <div id="preloader">
@@ -15,56 +16,61 @@
   <header class="header">
     <div class="container">
       <div class="brand">
-        <img src="assets/logo.svg" alt="MeeMetMij logo" />
+        <img src="/TDS-Flogomaky/pages/assets/meemetmij.png" alt="MeeMetMij logo" />
         <strong>MeeMetMij</strong>
       </div>
       <nav class="nav">
-        <a href="../index.html">Home</a>
-        <a href="wie.html" class="active">Wie zijn we</a>
-        <a href="experimenten.html">Experimenten</a>
-        <a href="contact.html">Contact</a>
+        <button class="nav-close" aria-label="close navigation">&times;</button>
+        <a href="/TDS-Flogomaky/index.html">Home</a>
+        <a href="/TDS-Flogomaky/pages/wie.html" class="active">Wie zijn we</a>
+        <a href="/TDS-Flogomaky/pages/experimenten.html">Experimenten</a>
+        <a href="/TDS-Flogomaky/pages/contact.html">Contact</a>
       </nav>
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
     </div>
   </header>
 
   <main class="container">
     <section class="hero">
-      <h1>Ons Team</h1>
-      <p>Wij zijn Team Flogomaky: een gepassioneerd en multidisciplinair team dat zich inzet voor veiligere en socialere schoolroutes. We combineren expertise in technologie, design en community building.</p>
+      <h1>Flogomaky</h1>
+      <p>Wij zijn Team Flogomaky, een gepassioneerd en multidisciplinair team dat zich inzet voor veiligere en socialere schoolroutes. Kom hier te weten wie we zijn en wat we doen.</p>
     </section>
 
     <section class="card">
-      <div class="team-grid">
+      <h2>Wat is Flogomaky</h2>
+      <p>Flogomaky is ontstaan uit een gedeelde passie voor het oplossen van maatschappelijke problemen met behulp van technologie. We zijn een team van vier studenten met verschillende achtergronden, van development tot design en business. Het idee voor MeeMetMij ontstond toen we de dagelijkse verkeerschaos rond scholen zagen en de stress die dit met zich meebrengt voor ouders, kinderen en scholen. We besloten onze krachten te bundelen om een oplossing te creëren die niet alleen de veiligheid verhoogt, maar ook de gemeenschap versterkt en bijdraagt aan een duurzamere toekomst. Zo kwamen we tot de app MeeMetMij.</p>
+      <div class="read-more-content">
+        <p>MeeMetMij is het resultaat van maandenlang onderzoek, interviews met ouders en scholen, en talloze prototypes. We hebben ons gericht op het bouwen van een platform dat eenvoudig te gebruiken is, maar tegelijkertijd krachtige functies biedt zoals real-time routeplanning, groepscommunicatie en een veilige check-in/check-out. Onze missie is om van MeeMetMij de standaard te maken voor veilige en sociale schoolroutes in heel Vlaanderen en daarbuiten.</p>
+      </div>
+      <button class="cta read-more-btn">Lees meer</button>
+    </section>
+
+    <section class="card">
+      <h2 id="team">Ons Team</h2>
+      <div class="team-grid responsive-team-grid">
         <div class="team-card">
-          <img src="assets/team1.svg" alt="Mathias" />
+          <img src="/TDS-Flogomaky/pages/assets/Mathias.png" alt="Mathias" />
           <strong>Mathias Broeckx</strong>
-          <div class="small">Strategy & Operations</div>
-          <p>Verantwoordelijk voor de algemene strategie en partnerschappen met scholen en steden.</p>
+          <div class="small">Als CEO en oprichter ben ik de drijvende kracht achter onze missie. Ik focus op strategie, productontwikkeling en het opbouwen van sterke relaties met scholen en steden. Mijn doel is om van MeeMetMij een duurzaam en succesvol platform te maken dat een positieve impact heeft op de gemeenschap.</div>
         </div>
         <div class="team-card">
-          <img src="assets/team2.svg" alt="Flor" />
+          <img src="/TDS-Flogomaky/pages/assets/Flor.png" alt="Flor" />
           <strong>Flor Bosch</strong>
-          <div class="small">Design & UX</div>
-          <p>Focust op het creëren van een eenvoudige en veilige gebruikerservaring voor ouders en begeleiders.</p>
+          <div class="small">Als mede-oprichter en ontwikkelaar ben ik verantwoordelijk voor de technische ruggengraat van ons platform. Ik zorg ervoor dat alles soepel draait, van de app tot de API's en real-time updates. Mijn passie is het bouwen van schaalbare en betrouwbare systemen die een verschil maken.</div>
         </div>
         <div class="team-card">
-          <img src="assets/team1.svg" alt="Kayn" />
+          <img src="/TDS-Flogomaky/pages/assets/Kayn.png" alt="Kayn" />
           <strong>Kayn Gheyskens</strong>
-          <div class="small">Tech Lead</div>
-          <p>Leidt de technische ontwikkeling, van de app en API's tot realtime updates en integraties.</p>
+          <div class="small">Binnen het team focus ik op design en gebruiksvriendelijkheid, zodat alles er niet alleen goed uitziet, maar ook logisch en correct werkt. Ik ben creatief, denk oplossingsgericht en werk graag in teamverband. Daarnaast help ik anderen graag wanneer ze ondersteuning kunnen gebruiken.</div>
         </div>
         <div class="team-card">
-          <img src="assets/team2.svg" alt="Govart" />
+          <img src="/TDS-Flogomaky/pages/assets/Govart.png" alt="Govart" />
           <strong>Govart Peijnenborg</strong>
-          <div class="small">Community & Scholen</div>
-          <p>Zet pilotprogramma's op en verzamelt feedback van onze gebruikers om het platform te verbeteren.</p>
+          <div class="small">Als ontwikkelaar ben ik verantwoordelijk voor het implementeren van nieuwe features en het onderhouden van de codebase. Ik werk nauw samen met het team om ervoor te zorgen dat onze app voldoet aan de hoogste standaarden van kwaliteit en gebruiksgemak.</div>
         </div>
       </div>
-    </section>
-
-    <section class="card">
-      <h2>Onze Waarden</h2>
-      <p>We geloven in duurzame mobiliteit, inclusieve samenwerking en het creëren van een veilige en vertrouwde omgeving. Onze kernwaarden zijn veiligheid, eenvoud en sociale verbinding.</p>
     </section>
   </main>
 
@@ -74,6 +80,6 @@
     </div>
   </footer>
 
-  <script src="src/app.js"></script>
+  <script src="/TDS-Flogomaky/pages/src/app.js"></script>
 </body>
 </html>

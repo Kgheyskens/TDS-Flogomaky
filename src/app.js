@@ -4,8 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (preloader && lottieContainer) {
     const isIndex = window.location.pathname.endsWith('index.html') || window.location.pathname === '/';
-    // Use absolute paths for preloader.json
-    const path = '/TDS-Flogomaky/pages/assets/preloader.json';
+    // Corrected path logic:
+    // If on index.html (root), path to preloader.json is 'pages/assets/preloader.json'
+    // If on a page in 'pages/' directory, path to preloader.json is 'assets/preloader.json'
+    const path = isIndex ? 'pages/assets/preloader.json' : 'assets/preloader.json';
 
     try {
       const animation = lottie.loadAnimation({
@@ -61,54 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Responsive navigation
   const navToggle = document.querySelector('.nav-toggle');
-  const navClose = document.querySelector('.nav-close');
   const nav = document.querySelector('.nav');
 
-  if (navToggle && nav) { // Ensure elements exist before adding event listener
-    navToggle.addEventListener('click', () => {
-      nav.classList.add('active');
-    });
-  }
-
-  if (navClose && nav) {
-    navClose.addEventListener('click', () => {
-      nav.classList.remove('active');
-    });
-  }
-
-  // Accordion for "Waarden"
-  document.querySelectorAll('.value-card').forEach(card => {
-    const content = card.querySelector('.value-content');
-
-    if (card && content) { // Check if card and content exist
-      card.addEventListener('click', () => { // Attach listener to the whole card
-        card.classList.toggle('active');
-        if (card.classList.contains('active')) {
-          content.style.maxHeight = content.scrollHeight + 'px';
-        } else {
-          content.style.maxHeight = '0';
-        }
-      });
-    }
+  navToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
   });
-
-  // "Lees meer" toggle for Flogomaky section on wie.html
-  const readMoreBtn = document.querySelector('.read-more-btn');
-  const readMoreContent = document.querySelector('.read-more-content');
-
-  if (readMoreBtn && readMoreContent) {
-    readMoreContent.style.maxHeight = '0'; // Initially hide content
-    readMoreContent.style.overflow = 'hidden';
-    readMoreContent.style.transition = 'max-height 0.3s ease-in-out';
-
-    readMoreBtn.addEventListener('click', () => {
-      if (readMoreContent.style.maxHeight === '0px') {
-        readMoreContent.style.maxHeight = readMoreContent.scrollHeight + 'px';
-        readMoreBtn.textContent = 'Lees minder';
-      } else {
-        readMoreContent.style.maxHeight = '0px';
-        readMoreBtn.textContent = 'Lees meer';
-      }
-    });
-  }
 });

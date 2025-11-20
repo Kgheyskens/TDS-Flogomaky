@@ -57,11 +57,9 @@ html, body {
 }
 
 .brand img {
-  width: 52px;
-  height: 52px;
+  width: 150px;
+  height: 110px;
   border-radius: 10px;
-  background: var(--primary);
-  padding: 8px;
 }
 
 .nav {
@@ -75,6 +73,7 @@ html, body {
   padding: 0.5rem 1rem;
   border-radius: 8px;
   transition: color 0.3s, background 0.3s;
+  pointer-events: auto; /* Ensure links are always clickable */
 }
 
 .nav a:hover, .nav a.active {
@@ -88,6 +87,9 @@ html, body {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.6s ease-out;
+  margin-bottom: 2rem;
+  background: var(--off-white);
+  border-radius: var(--radius);
 }
 
 .hero.show {
@@ -99,11 +101,12 @@ html, body {
   margin: 0 0 1rem;
   font-size: 2.8rem;
   font-weight: 700;
+  color: var(--dark-blue);
 }
 
 .hero p {
   margin: 0 auto 1.5rem;
-  color: #5a6a90;
+  color: var(--dark-blue);
   max-width: 600px;
   font-size: 1.1rem;
   line-height: 1.6;
@@ -124,6 +127,7 @@ html, body {
 .cta:hover {
   transform: translateY(-3px);
   background: #2988e6;
+  color: white;
 }
 
 .grid {
@@ -131,6 +135,48 @@ html, body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Default to 1x1 on small screens */
+  gap: 1.5rem;
+}
+
+@media (min-width: 769px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2x2 on larger screens */
+  }
+}
+
+.value-card .value-title {
+  cursor: pointer;
+  padding-right: 2rem;
+  position: relative;
+}
+
+.value-card .value-title::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.value-card.active .value-title::after {
+  content: '-';
+}
+
+.value-card .value-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.value-card.active .value-content {
+  max-height: 500px; /* Adjust as needed for content */
 }
 
 .card {
@@ -141,6 +187,9 @@ html, body {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.6s ease-out;
+  margin-bottom: 2rem;
+  border: 1px solid #e5e7eb; /* Subtle border */
+  text-align: center; /* Center the button */
 }
 
 .card.show {
@@ -185,6 +234,22 @@ html, body {
   gap: 1.5rem;
 }
 
+.responsive-team-grid {
+  grid-template-columns: 1fr; /* Default to 1x1 on small screens */
+}
+
+@media (min-width: 769px) {
+  .responsive-team-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2x2 on medium screens */
+  }
+}
+
+@media (min-width: 1025px) {
+  .responsive-team-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4x1 on large screens */
+  }
+}
+
 .team-card {
   display: flex;
   flex-direction: column;
@@ -194,8 +259,8 @@ html, body {
 }
 
 .team-card img {
-  width: 100px;
-  height: 100px;
+  width: 120px; /* Increased size */
+  height: 120px; /* Increased size */
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--secondary);
@@ -203,14 +268,14 @@ html, body {
 
 .small {
   font-size: 1rem;
-  color: #5a6a90;
+  color: var(--dark-blue);
 }
 
 .footer {
   margin-top: 4rem;
   padding: 2rem;
   text-align: center;
-  color: #5a6a90;
+  color: var(--dark-blue);
   font-size: 0.9rem;
   border-top: 1px solid #e5e7eb;
 }
@@ -237,4 +302,131 @@ html, body {
 
 h1, h2, h3 {
   font-weight: 600;
+  color: var(--dark-blue);
+}
+
+/* Responsive Navigation */
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 1rem; /* Increased padding for larger clickable area */
+  z-index: 101;
+}
+
+.hamburger {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--dark-blue);
+  position: relative;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: var(--dark-blue);
+  left: 0;
+  transition: transform 0.3s;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  bottom: -8px;
+}
+
+.nav-close {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--dark-blue);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 70%;
+    background: var(--off-white);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transition: right 0.5s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    z-index: 102; /* Ensure it's above nav-toggle */
+    pointer-events: auto; /* Explicitly enable pointer events for the nav container */
+  }
+
+  .nav.active {
+    right: 0;
+  }
+
+  .nav a {
+    color: var(--dark-blue);
+    pointer-events: auto; /* Explicitly enable pointer events for links */
+  }
+
+  .nav-toggle {
+    display: block;
+    pointer-events: auto; /* Ensure toggle is clickable */
+  }
+
+  .nav-close {
+    display: block;
+  }
+
+  .nav.active + .nav-toggle .hamburger {
+    background: transparent;
+  }
+
+  .nav.active + .nav-toggle .hamburger::before {
+    transform: rotate(45deg) translate(5px, 6px);
+    background: var(--dark-blue);
+  }
+
+  .nav.active + .nav-toggle .hamburger::after {
+    transform: rotate(-45deg) translate(5px, -6px);
+    background: var(--dark-blue);
+  }
+
+  .team-grid.four-columns {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr; /* 1x1 on small screens */
+  }
+
+  .team-card {
+    flex-direction: row; /* Horizontal layout on small screens */
+    text-align: left;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .responsive-team-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2x2 on medium screens */
+  }
+}
+
+@media (min-width: 1025px) {
+  .responsive-team-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4x1 on large screens */
+  }
 }

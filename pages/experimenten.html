@@ -4,25 +4,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Experimenten & Validatie — MeeMetMij</title>
-  <link rel="stylesheet" href="src/styles.css">
+  <link rel="icon" type="image/svg+xml" href="/TDS-Flogomaky/pages/assets/meemetmij.svg" sizes="any">
+  <link rel="stylesheet" href="/TDS-Flogomaky/pages/src/styles.css">
+  <script src="/TDS-Flogomaky/pages/src/lib/lottie.min.js"></script>
 </head>
 <body>
-  <div id="preloader"><div class="spinner" role="status"></div></div>
+  <div id="preloader">
+    <div id="lottie-preloader" style="width: 200px; height: 200px;"></div>
+  </div>
+
   <header class="header">
     <div class="container">
       <div class="brand">
-        <img src="assets/logo.svg" data-src="assets/logo.svg" alt="MeeMetMij logo" />
-        <div>
-          <strong>MeeMetMij</strong>
-          <div class="small">Experimenten & inzichten</div>
-        </div>
+        <img src="/TDS-Flogomaky/pages/assets/meemetmij.png" alt="MeeMetMij logo"/>
+        <strong>MeeMetMij</strong>
       </div>
       <nav class="nav">
-        <a href="../index.html">Home</a>
-        <a href="wie.html">Wie zijn we</a>
-        <a href="experimenten.html">Experimenten</a>
-        <a href="./contact.html">Contact</a>
+        <button class="nav-close" aria-label="close navigation">&times;</button>
+        <a href="/TDS-Flogomaky/index.html">Home</a>
+        <a href="/TDS-Flogomaky/pages/wie.html">Wie zijn we</a>
+        <a href="/TDS-Flogomaky/pages/experimenten.html" class="active">Experimenten</a>
+        <a href="/TDS-Flogomaky/pages/contact.html">Contact</a>
       </nav>
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
     </div>
   </header>
 
@@ -38,11 +44,8 @@
         <li>Realtime updates en flexibele boekopties zijn cruciaal voor adoptie.</li>
       </ul>
 
-      <h2 style="margin-top:1rem">Testdagen — korte samenvatting</h2>
-      <p>Onze testdagen toonden aan dat begeleiders en vaste routes het vertrouwen van ouders verhogen en dat kinderen profiteren van de sociale component van samen reizen.</p>
-
       <h2 style="margin-top:1rem">Downloads & rapporten</h2>
-      <p>Wil je de volledige resultaten ontvangen? <a class="link" href="./contact.html#inschrijven">Schrijf je in</a> voor onze nieuwsbrief en we sturen je de rapporten.</p>
+      <p>Wil je de volledige resultaten ontvangen? <a class="link" href="/TDS-Flogomaky/pages/contact.html#inschrijven">Schrijf je in</a> voor onze nieuwsbrief en we sturen je de rapporten.</p>
     </section>
 
   </main>
@@ -51,6 +54,6 @@
     <div class="container">&copy; 2025 MeeMetMij — Team Flogomaky</div>
   </footer>
 
-  <script src="src/app.js"></script>
+  <script src="/TDS-Flogomaky/pages/src/app.js"></script>
 </body>
 </html>

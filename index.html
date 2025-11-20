@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>MeeMetMij — Welkom</title>
   <meta name="description" content="MeeMetMij: veilige en sociale schoolroutes voor kinderen (6-12 jaar). Ontdek ons platform, team en experimenten.">
-  <link rel="icon" type="image/svg+xml" href="pages/assets/logo.svg">
-  <link rel="stylesheet" href="pages/src/styles.css">
-  <script src="pages/src/lib/lottie.min.js"></script>
+  <link rel="icon" type="image/svg+xml" href="/TDS-Flogomaky/pages/assets/meemetmij.svg" sizes="any">
+  <link rel="stylesheet" href="/TDS-Flogomaky/pages/src/styles.css">
+  <script src="/TDS-Flogomaky/pages/src/lib/lottie.min.js"></script>
 </head>
 <body>
   <div id="preloader">
@@ -17,15 +17,19 @@
   <header class="header">
     <div class="container">
       <div class="brand">
-        <img src="pages/assets/logo.svg" alt="MeeMetMij logo" />
+        <img src="/TDS-Flogomaky/pages/assets/meemetmij.png" alt="MeeMetMij logo" />
         <strong>MeeMetMij</strong>
       </div>
       <nav class="nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="pages/wie.html">Wie zijn we</a>
-        <a href="pages/experimenten.html">Experimenten</a>
-        <a href="pages/contact.html">Contact</a>
+        <button class="nav-close" aria-label="close navigation">&times;</button>
+        <a href="/TDS-Flogomaky/index.html" class="active">Home</a>
+        <a href="/TDS-Flogomaky/pages/wie.html">Wie zijn we</a>
+        <a href="/TDS-Flogomaky/pages/experimenten.html">Experimenten</a>
+        <a href="/TDS-Flogomaky/pages/contact.html">Contact</a>
       </nav>
+      <button class="nav-toggle" aria-label="toggle navigation">
+        <span class="hamburger"></span>
+      </button>
     </div>
   </header>
 
@@ -33,42 +37,76 @@
     <section class="hero">
       <h1>Veilig, sociaal en zorgeloos op weg naar school.</h1>
       <p>MeeMetMij is een platform dat schoolroutes veiliger en leuker maakt voor kinderen, ouders en scholen. Ontdek hoe we de dagelijkse schoolrit transformeren.</p>
-      <a class="cta" href="pages/contact.html#inschrijven">Schrijf je in voor updates</a>
+      <a class="cta" href="/TDS-Flogomaky/pages/contact.html#inschrijven">Schrijf je in voor updates</a>
     </section>
 
     <div class="grid">
       <section class="card">
         <h2>Ons verhaal</h2>
-        <p>Het dagelijkse schoolverkeer is een bron van stress. MeeMetMij is geboren uit de noodzaak voor een veiliger, socialer en duurzamer alternatief. Wij bieden één centraal platform voor routeplanning, groepsritten en directe communicatie.</p>
+        <p>Kent u dat gevoel wanneer het schooljaar opnieuw begint? De ochtenden worden drukker, de boekentassen moeten
+          in orde zijn, iedereen moet op tijd de deur uit… en plots lijkt elke minuut te kort.</p>
+        <p>Wij staan klaar om u daarbij te helpen. Met deze oplossing willen we ouders ondersteunen in het creëren of
+          behouden van een rustige, overzichtelijke ochtendroutine. Zo vertrekt uw kind niet alleen op tijd, maar ook
+          met een goed gevoel.</p>
+          <p>Daarnaast bieden wij één centrale omgeving waarin u rechtstreeks kunt communiceren met
+          zowel de school als andere ouders. Geen onduidelijkheden meer, gewoon 1 platform voor u.</p>
+        <p>Benieuwd wie wij zijn en hoe dit idee ontstaan is?</p>
+        <a class="cta" href="/TDS-Flogomaky/pages/wie.html">Ontdek het hier</a>
       </section>
       <section class="card">
-        <h2>Missie & Waarden</h2>
-        <p>Onze missie is om kinderen zelfstandig en veilig naar school te laten reizen. We focussen op veiligheid, eenvoud en duurzaamheid, en bouwen aan een community van vertrouwen.</p>
+        <h2>Missie</h2>
+        <p>Wij creëren een veilig en gebruiksvriendelijk platform dat scholen, ouders en begeleiders verbindt om kinderen zelfstandig en verantwoord van en naar school te laten reizen. Door vooraf geplande veilige routes, real-time communicatie en een geïntegreerde aanpak bevorderen wij niet alleen de veiligheid van leerlingen, maar ook de betrokkenheid van de hele schoolgemeenschap.</p>
       </section>
     </div>
 
-    <section class="card">
-      <h2 id="team">Ons Team</h2>
-      <div class="team-grid">
-        <div class="team-card">
-          <img src="pages/assets/team1.svg" alt="Mathias" />
-          <strong>Mathias Broeckx</strong>
-          <div class="small">Product & Ops</div>
+    <h2 style="text-align: center; margin-top: 2rem;">Onze Waarden</h2>
+    <section class="grid values-grid">
+      <div class="card value-card">
+        <h3 class="value-title">Veiligheid eerst</h3>
+        <div class="value-content">
+          <p>De bescherming en het welzijn van kinderen staat centraal in alles wat we doen. We gebruiken real-time routeplanning en actuele kaartgegevens via OpenStreetMap om de veiligste routes te garanderen.</p>
         </div>
-        <div class="team-card">
-          <img src="pages/assets/team2.svg" alt="Flor" />
-          <strong>Flor Bosch</strong>
-          <div class="small">Design & UX</div>
+      </div>
+      <div class="card value-card">
+        <h3 class="value-title">Gebruiksgemak & Toegankelijkheid</h3>
+        <div class="value-content">
+          <p>We ontwikkelen een veilige, duidelijke en eenvoudig te beheren app die zowel voor scholen, ouders als begeleiders makkelijk te gebruiken is - in tegenstelling tot versnipperde WhatsApp-groepen.</p>
         </div>
-        <div class="team-card">
-          <img src="pages/assets/team1.svg" alt="Kayn" />
-          <strong>Kayn Gheyskens</strong>
-          <div class="small">Tech & Integraties</div>
+      </div>
+      <div class="card value-card">
+        <h3 class="value-title">Vertrouwen & Transparantie</h3>
+        <div class="value-content">
+          <p>Scholen en ouders weten altijd waar de kinderen zich bevinden. We bouwen duurzame relaties gebaseerd op vertrouwen, betrouwbaarheid en open communicatie.</p>
         </div>
-        <div class="team-card">
-          <img src="pages/assets/team2.svg" alt="Govart" />
-          <strong>Govart Peijnenborg</strong>
-          <div class="small">Community & Scholen</div>
+      </div>
+      <div class="card value-card">
+        <h3 class="value-title">Privacy & Beveiliging</h3>
+        <div class="value-content">
+          <p>We behandelen persoonlijke gegevens met de hoogste zorg en zorgen voor een veilige en schaalbare infrastructuur die voldoet aan alle privacy-eisen.</p>
+        </div>
+      </div>
+      <div class="card value-card">
+        <h3 class="value-title">Gemeenschapsgedreven</h3>
+        <div class="value-content">
+          <p>We geloven in de kracht van het netwerkeffect. Door samen te werken met scholen verspreiden we onze app organisch binnen bestaande gemeenschappen en stimuleren we actieve betrokkenheid van ouders en begeleiders.</p>
+        </div>
+      </div>
+      <div class="card value-card">
+        <h3 class="value-title">Zelfstandigheid bevorderen</h3>
+        <div class="value-content">
+          <p>We helpen kinderen om veiliger en zelfstandiger te worden, terwijl ouders gemoedsrust krijgen en meer tijd voor andere taken.</p>
+        </div>
+      </div>
+      <div class="card value-card">
+        <h3 class="value-title">Continue verbetering</h3>
+        <div class="value-content">
+          <p>We optimaliseren onze app continu op basis van feedback van scholen, ouders en leerlingen om altijd te voldoen aan hun behoeften.</p>
+        </div>
+      </div>
+      <div class="card value-card">
+        <h3 class="value-title">Duurzaamheid & Verantwoordelijkheid</h3>
+        <div class="value-content">
+          <p>Door meer kinderen te stimuleren om samen te fietsen in plaats van individueel met de auto gebracht te worden, dragen we bij aan een groenere en gezondere samenleving met minder verkeersdrukte rond scholen.</p>
         </div>
       </div>
     </section>
@@ -76,7 +114,7 @@
     <section class="card">
       <h2>Doe mee!</h2>
       <p>Help ons het platform te verbeteren. Schrijf je in voor updates, neem deel aan onze pilots of geef feedback.</p>
-      <p><a class="cta" href="pages/contact.html#inschrijven">Schrijf je in</a> <a class="link" href="#">Geef feedback</a></p>
+      <p><a class="cta" href="/TDS-Flogomaky/pages/contact.html#inschrijven">Schrijf je in</a> <a class="link" href="#">Geef feedback</a></p>
     </section>
   </main>
 
@@ -86,6 +124,6 @@
     </div>
   </footer>
 
-  <script src="pages/src/app.js"></script>
+  <script src="/TDS-Flogomaky/pages/src/app.js"></script>
 </body>
 </html>
