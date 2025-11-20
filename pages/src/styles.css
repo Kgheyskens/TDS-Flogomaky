@@ -266,6 +266,20 @@ html, body {
   border: 3px solid var(--secondary);
 }
 
+.team-member-static {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.team-member-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .small {
   font-size: 1rem;
   color: var(--dark-blue);
@@ -416,6 +430,40 @@ h1, h2, h3 {
   .team-card {
     flex-direction: row; /* Horizontal layout on small screens */
     text-align: left;
+    align-items: center; /* Center vertically */
+    justify-content: flex-start; /* Align to the left */
+    position: relative;
+    overflow: hidden;
+  }
+
+  .team-member-static {
+    transform: translateX(0); /* Keep it at the start by default */
+    transition: transform 0.4s ease-in-out;
+    flex-shrink: 0;
+  }
+
+  .team-card:hover .team-member-static {
+    transform: translateX(0); /* Keep it at the start on hover */
+  }
+
+  .team-member-info {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out, left 0.4s ease-in-out;
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .team-card:hover .team-member-info {
+    opacity: 1;
+    left: 130px; /* Adjust to appear next to the static content */
+    width: calc(100% - 130px);
   }
 }
 
