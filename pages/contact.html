@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Contact — MeeMetMij</title>
-  <link rel="icon" type="image/svg+xml" href="assets/meemetmij.svg" sizes="any">
+  <link rel="icon" type="favicon" href="../pages/assets/meemetmij.ico" sizes="any">
   <link rel="stylesheet" href="src/styles.css">
   <script src="src/lib/lottie.min.js"></script>
 </head>
@@ -22,9 +22,9 @@
       <nav class="nav">
         <button class="nav-close" aria-label="close navigation">&times;</button>
         <a href="../index.html">Home</a>
-        <a href="wie.html">Wie zijn we</a>
-        <a href="experimenten.html">Experimenten</a>
-        <a href="contact.html" class="active">Contact</a>
+        <a href="wie.html">Ons verhaal</a>
+        <a href="experimenten.html">Onze Oplossing</a>
+        <a href="contact.html" class="active">Contacteer ons</a>
       </nav>
       <button class="nav-toggle" aria-label="toggle navigation">
         <span class="hamburger"></span>
@@ -35,23 +35,27 @@
   <main class="container">
     <section class="hero">
       <h1>Contacteer Ons</h1>
-      <p>Heb je een vraag, wil je je inschrijven voor updates, of ben je geïnteresseerd in een samenwerking? We horen graag van je.</p>
+      <p>Heb je een vraag, wil je je inschrijven voor updates, of ben je geïnteresseerd in dit project? We horen graag van je.</p>
     </section>
+
+    <br>
 
     <section class="card">
       <h2 id="inschrijven">Inschrijven voor Updates</h2>
-      <form id="signup" action="#">
+      <form id="signup-form" action="https://formspree.io/f/mblwbego?_next=/pages/contact.html?submitted=true" method="POST">
         <div class="form-group">
           <label for="email">E-mailadres</label>
-          <input id="email" type="email" placeholder="jouw@email.com" required>
+          <input id="email" type="email" name="Email" placeholder="jouw@email.com" required>
         </div>
         <div class="form-group">
-          <label for="naam">Naam (optioneel)</label>
-          <input id="naam" type="text" placeholder="Je naam">
+          <label for="naam">Naam</label>
+          <input id="naam" type="text" name="Naam" placeholder="Je naam" required>
         </div>
         <button class="cta" type="submit">Schrijf je in</button>
       </form>
     </section>
+
+    <br>
 
     <section class="card">
       <h2>Enquête</h2>
@@ -59,10 +63,32 @@
       <a href="https://forms.gle/bJLj1Mn6FPPogX6a7" class="cta" target="_blank" rel="noopener noreferrer">Vul de enquête in</a>
     </section>
 
+    <br>
+
     <section class="card">
-      <h2>Direct Contact</h2>
-      <p>Voor algemene vragen of persinformatie, stuur een e-mail naar <a class="link" href="mailto:info@meemetmij.nl">info@meemetmij.nl</a>.</p>
-      <p>Volg ons op <a class="link" href="#">Instagram</a> en <a class="link" href="#">Facebook</a> voor de laatste updates.</p>
+      <h2>Socials</h2>
+      <p>Indien je onze updates wat wilt volgen en zien hoever we staan, volg ons op <a class="link" href="#">Instagram.</a></p>
+    </section>
+
+    <br>
+
+    <section class="card">
+      <h2>Geef ons feedback</h2>
+      <form id="contact-form" action="https://formspree.io/f/mblwbego?_next=/pages/contact.html?submitted=true" method="POST">
+        <div class="form-group">
+          <label for="contact-naam">Naam</label>
+          <input id="contact-naam" type="text" name="Naam" placeholder="Je naam">
+        </div>
+        <div class="form-group">
+          <label for="contact-email">E-mailadres</label>
+          <input id="contact-email" type="email" name="E-mail" placeholder="jouw@email.com">
+        </div>
+        <div class="form-group">
+          <label for="contact-bericht">Bericht</label>
+          <textarea id="contact-bericht" rows="5" name="Bericht" placeholder="Typ hier je bericht..." required></textarea>
+        </div>
+        <button class="cta" type="submit">Verstuur bericht</button>
+      </form>
     </section>
   </main>
 

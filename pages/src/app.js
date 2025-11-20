@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Removed the ?submitted=true logic as it's no longer needed with AJAX submission
+
   const preloader = document.getElementById('preloader');
   const lottieContainer = document.getElementById('lottie-preloader');
 
@@ -64,17 +66,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const navClose = document.querySelector('.nav-close');
   const nav = document.querySelector('.nav');
 
-  if (navToggle && nav) { // Ensure elements exist before adding event listener
+  if (navToggle && nav) {
     navToggle.addEventListener('click', () => {
-      nav.classList.add('active');
+      nav.classList.toggle('active');
+      document.querySelector('.hamburger').classList.toggle('open'); // hamburger animatie
     });
   }
-
   if (navClose && nav) {
     navClose.addEventListener('click', () => {
       nav.classList.remove('active');
+      document.querySelector('.hamburger').classList.remove('open'); // reset hamburger
     });
   }
+
+
+  // Close nav on scroll if open
+  window.addEventListener('scroll', () => {
+    if (nav && nav.classList.contains('active')) {
+      nav.classList.remove('active');
+    }
+  });
 
   // Accordion for "Waarden"
   document.querySelectorAll('.value-card').forEach(card => {
@@ -110,5 +121,96 @@ document.addEventListener('DOMContentLoaded', () => {
         readMoreBtn.textContent = 'Lees meer';
       }
     });
+  }
+
+  // Click-to-reveal for team members
+  document.querySelectorAll('.team-card').forEach(card => {
+    const content = card.querySelector('.team-member-info .small');
+
+    if (card && content) {
+      card.addEventListener('click', () => {
+        card.classList.toggle('active');
+        if (card.classList.contains('active')) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          content.style.maxHeight = '0';
+        }
+      });
+    }
+  });
+
+  // Accordion for "Pains Relieved" and "Gains Created"
+  document.querySelectorAll('.pain-gain-item').forEach(item => {
+    const title = item.querySelector('.pain-gain-title');
+    const content = item.querySelector('.pain-gain-content');
+
+    if (title && content) {
+      item.addEventListener('click', () => { // Attach listener to the whole item
+        item.classList.toggle('active');
+        if (item.classList.contains('active')) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+        } else {
+          content.style.maxHeight = '0';
+        }
+      });
+    }
+  });
+
+  // Function to handle AJAX form submission
+  async function handleFormSubmission(event, form) {
+    event.preventDefault(); // Prevent default form submission
+
+    const formUrl = form.action;
+    const formData = new FormData(form);
+
+    // For contact form, handle "Anoniem" values if empty
+    if (form.id === 'contact-form') {
+      const contactNameInput = form.querySelector('#contact-naam');
+      const contactEmailInput = form.querySelector('#contact-email');
+
+      if (contactNameInput && contactNameInput.value.trim() === '') {
+        formData.set('Naam', 'Anoniem');
+      }
+      if (contactEmailInput && contactEmailInput.value.trim() === '') {
+        formData.set('E-mail', 'Anoniem');
+      }
+    }
+
+    try {
+      const response = await fetch(formUrl, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json' // Important for Formspree AJAX
+        }
+      });
+
+      if (response.ok) {
+        form.reset(); // Reset the form fields
+        alert('Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.'); // Or display a more styled success message
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          alert(data.errors.map(error => error.message).join(', '));
+        } else {
+          alert('Er is een probleem opgetreden bij het verzenden van je bericht.');
+        }
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Er is een netwerkfout opgetreden. Probeer het later opnieuw.');
+    }
+  }
+
+  // Handle signup form submission
+  const signupForm = document.getElementById('signup-form');
+  if (signupForm) {
+    signupForm.addEventListener('submit', (event) => handleFormSubmission(event, signupForm));
+  }
+
+  // Handle contact form submission
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', (event) => handleFormSubmission(event, contactForm));
   }
 });
