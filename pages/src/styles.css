@@ -149,6 +149,7 @@ img{max-width:100%;display:block}
   padding: .6rem;
   cursor: pointer;
   z-index: 1001;
+  margin-left: auto; /* This will push the hamburger to the right */
 }
 
 /* Hamburger icon */
@@ -371,7 +372,7 @@ h1,h2,h3{ color:var(--dark-blue); font-weight:600 }
 }
 
 /* ---------- Desktop / larger screens ---------- */
-@media(min-width:769px){
+@media(min-width:900px){
   .header .container {
     justify-content: space-between; /* Added to push nav to the right */
   }
