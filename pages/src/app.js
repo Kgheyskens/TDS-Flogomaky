@@ -213,4 +213,56 @@ document.addEventListener('DOMContentLoaded', () => {
   if (contactForm) {
     contactForm.addEventListener('submit', (event) => handleFormSubmission(event, contactForm));
   }
+
+  // Carousel for prototype.html
+  const carousel = document.querySelector('.carousel');
+  if (carousel) {
+    const carouselInner = carousel.querySelector('.carousel-inner');
+    const carouselItems = carousel.querySelectorAll('.carousel-item');
+    const prevButton = carousel.querySelector('.carousel-control.prev');
+    const nextButton = carousel.querySelector('.carousel-control.next');
+    let currentIndex = 0;
+    let autoPlayInterval;
+
+    const updateCarousel = () => {
+      carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+    };
+
+    const goToNext = () => {
+      currentIndex = (currentIndex + 1) % carouselItems.length;
+      updateCarousel();
+    };
+
+    const goToPrev = () => {
+      currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+      updateCarousel();
+    };
+
+    const startAutoPlay = () => {
+      autoPlayInterval = setInterval(goToNext, 5000); // Change slide every 5 seconds
+    };
+
+    const stopAutoPlay = () => {
+      clearInterval(autoPlayInterval);
+    };
+
+    if (nextButton) {
+      nextButton.addEventListener('click', () => {
+        stopAutoPlay();
+        goToNext();
+        startAutoPlay();
+      });
+    }
+
+    if (prevButton) {
+      prevButton.addEventListener('click', () => {
+        stopAutoPlay();
+        goToPrev();
+        startAutoPlay();
+      });
+    }
+
+    // Start auto-play when the page loads
+    startAutoPlay();
+  }
 });
